@@ -1,0 +1,5 @@
+# add all controllers which should be convert to rest here - arek
+
+_test:
+  resource: "@SymfonierApiBundle/Controller/TestController.php"
+  type:     rest

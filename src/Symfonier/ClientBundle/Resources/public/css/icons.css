@@ -1,0 +1,82 @@
+@font-face {
+	font-family: 'Symfonier';
+	src:url('/bundles/Symfonierclient/fonts/Symfonier.eot?-l36k0c');
+	src:url('/bundles/Symfonierclient/fonts/Symfonier.eot?#iefix-l36k0c') format('embedded-opentype'),
+		url('/bundles/Symfonierclient/fonts/Symfonier.woff?-l36k0c') format('woff'),
+		url('/bundles/Symfonierclient/fonts/Symfonier.ttf?-l36k0c') format('truetype'),
+		url('/bundles/Symfonierclient/fonts/Symfonier.svg?-l36k0c#Symfonier') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'Symfonier';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ta-arrowright:before {
+	content: "\e611";
+}
+.icon-ta-arrowdown:before {
+	content: "\e612";
+}
+.icon-ta-pin:before {
+	content: "\e600";
+}
+.icon-ta-person:before {
+	content: "\e601";
+}
+.icon-ta-message:before {
+	content: "\e602";
+}
+.icon-ta-megaphone:before {
+	content: "\e603";
+}
+.icon-ta-map:before {
+	content: "\e604";
+}
+.icon-ta-magnifier:before {
+	content: "\e605";
+}
+.icon-ta-list:before {
+	content: "\e606";
+}
+.icon-ta-home:before {
+	content: "\e607";
+}
+.icon-ta-groups:before {
+	content: "\e608";
+}
+.icon-ta-fire:before {
+	content: "\e609";
+}
+.icon-ta-envelope:before {
+	content: "\e60a";
+}
+.icon-ta-dropdown:before {
+	content: "\e60b";
+}
+.icon-ta-categories:before {
+	content: "\e60c";
+}
+.icon-ta-camera:before {
+	content: "\e60d";
+}
+.icon-ta-calendar:before {
+	content: "\e60e";
+}
+.icon-ta-adv:before {
+	content: "\e60f";
+}
+.icon-ta-administrator:before {
+	content: "\e610";
+}

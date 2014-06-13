@@ -1,0 +1,7 @@
+symfonier_client_homepage:
+    pattern:  /
+    defaults: { _controller: SymfonierClientBundle:Default:index }
+
+symfonier_system_info:
+    pattern:  /sys-info
+    defaults: { _controller: SymfonierClientBundle:Default:systemInfo }

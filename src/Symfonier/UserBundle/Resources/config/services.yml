@@ -1,0 +1,19 @@
+services:
+  # symfonier.security.login_listener:
+  #   class: Symfonier\UserBundle\EventListener\InteractiveLogin
+  #   arguments: ['@session']
+  #   tags:
+  #     - { name: kernel.event_listener, event: security.interactive_login, method: onSecurityInteractiveLogin }
+  #     - { name: kernel.event_listener, event: kernel.response, method: onKernelResponse }
+
+  # symfonier_user.registration.form.type:
+  #   class: Symfonier\UserBundle\Form\Type\RegistrationFormType
+  #   arguments: [%fos_user.model.user.class%]
+  #   tags:
+  #     - { name: form.type, alias: symfonier_user_registration }
+
+  # symfonier_user.registration.form.handler:
+  #   class: Symfonier\UserBundle\Form\Handler\RegistrationFormHandler
+  #   arguments: ["@fos_user.registration.form", "@request", "@fos_user.user_manager", "@fos_user.mailer", "@fos_user.util.token_generator", "@doctrine_mongodb"]
+  #   scope: request
+  #   public: false

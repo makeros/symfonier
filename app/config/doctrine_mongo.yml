@@ -1,0 +1,20 @@
+doctrine_mongodb:
+  default_database: symfonier_%kernel.environment%
+  connections:
+    default:
+        # server: mongodb://user-rw:4xx7_5wk4@91.121.168.202:27777#
+        server: mongodb://localhost:27017/symfonier_%kernel.environment%
+        options: {}
+
+  document_managers:
+    default:
+      auto_mapping: true
+      mappings:
+          SymfonierApiBundle: ~
+          SymfonierUserBundle: ~
+      # metadata_cache_driver:
+      #     type: memcache
+      #     class: Doctrine\Common\Cache\MemcacheCache
+      #     host: localhost
+      #     port: 11211
+      #     instance_class: Memcache

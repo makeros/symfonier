@@ -1,0 +1,93 @@
+{
+    "name": "symfonier",
+    "license": "MIT",
+    "type": "project",
+    "description": "Symfony 2 with: MongoDB support, fosrest, fosuser, sonata admin, bootstrap + assetic",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {    
+        "php": ">=5.3.3",
+        "symfony/symfony": "~2.3",
+        "symfony/icu": "1.0.*",
+        "twig/extensions": "1.0.*",
+        "symfony/assetic-bundle": "2.3.*",
+        "symfony/swiftmailer-bundle": "2.3.*",
+        "symfony/monolog-bundle": "~2.3",
+        "sensio/distribution-bundle": "2.3.*",
+        "sensio/framework-extra-bundle": "2.3.*",
+        "sensio/generator-bundle": "2.3.*",
+        "jms/serializer-bundle": "dev-master",
+        "friendsofsymfony/rest-bundle": "1.2.2",
+        "nelmio/api-doc-bundle": "~2.4",
+        "liip/cache-control-bundle": "~1.0.5",
+        "willdurand/hateoas-bundle": "0.2.*",
+        "hautelook/templated-uri-bundle": "~1.0",
+        "willdurand/rest-extra-bundle": "~1.0",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "1.2.*",
+        "doctrine/mongodb-odm": "1.0.*@dev",
+        "doctrine/mongodb-odm-bundle": "3.0.*@dev",
+        "phpunit/phpunit": "4.0.4",
+        "friendsofsymfony/user-bundle": "~1.3",
+        "sonata-project/admin-bundle": "2.2.12",
+        "sonata/doctrine-mongodb-admin-bundle": "2.2.*@dev",
+        "mopa/bootstrap-bundle": "dev-master",
+        "twbs/bootstrap": "dev-master",
+        "twbs/bootstrap-sass": "3.1.1",
+        "avalanche123/imagine-bundle": "v2.1"
+    },
+    "conflict": {
+        "symfony/routing": "2.4.1"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "php app/console assets:install --symlink web",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrapSass",
+            "php app/console fos:user:create admin admin@example.com admin",
+            "php app/console fos:user:promote admin ROLE_ADMIN",
+            "php app/console fos:user:promote admin ROLE_SONATA_ADMIN",
+            "php app/console assetic:dump"
+        ],
+        "post-update-cmd": [
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "php app/console assets:install --symlink web",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrapSass",
+            "php app/console assetic:dump"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "minimum-stability": "stable",
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "branch-alias": {
+            "dev-master": "2.3-dev"
+        }
+    },
+    "repositories": [
+        {
+           "type":"package",
+           "package": {
+               "version":"dev-master",
+               "name":"jlong/sass-twitter-bootstrap",
+               "source": {
+                   "url":"https://github.com/jlong/sass-twitter-bootstrap.git",
+                   "type":"git",
+                   "reference":"master"
+               },
+               "dist": {
+                   "url":"https://github.com/jlong/sass-twitter-bootstrap/archive/master",
+                   "type":"zip"
+               }
+           }
+        }
+    ]
+}

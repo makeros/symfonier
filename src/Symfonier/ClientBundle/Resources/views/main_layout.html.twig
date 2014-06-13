@@ -1,0 +1,56 @@
+{% extends 'MopaBootstrapBundle::base.html.twig' %}
+
+{% block title %}Symfonier{% endblock %}
+
+{% block head_style %}
+    {% stylesheets
+        '@MopaBootstrapBundle/Resources/public/sass/mopabootstrapbundle.scss'
+        '@SymfonierClientBundle/Resources/public/sass/main.scss'
+    %}
+        <link href="{{ asset_url }}" type="text/css" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+
+    <!-- container -->
+    <div class="container main-container" role="main">
+        <nav class="navbar navbar-default " role="navigation">
+            <a class="navbar-brand" href="{{ path('symfonier_client_homepage') }}">Symfonier</a>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="{{ path('sonata_admin_redirect') }}">Admin panel</a>
+                </li>
+                <li>
+                    <a href="{{ path('symfonier_system_info') }}">System info</a>
+                </li>
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                        <a class="login" href="{{ path('fos_user_security_logout') }}">
+                            {{ app.user.username }} |
+                            Wyloguj
+                        </a>
+                    </li>
+                {% else %}
+                    <li><a href="{{ path('fos_user_security_login') }}" class="login">Logowanie</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+
+       
+
+        <div class="row content">
+
+            {% for type, messages in app.session.flashBag.all %}
+                {% for message in messages %}
+                    <div class="alert col-md-8 center alert-success alert-{{ type }}">{{ message|trans({}, 'FOSUserBundle') }}</div>
+                {% endfor %}
+            {% endfor %}
+
+            {% block content %}
+            {% endblock content %}
+
+        </div>
+    </div>
+
+{% endblock %}

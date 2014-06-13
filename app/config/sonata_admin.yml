@@ -1,0 +1,45 @@
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        #sonata.admin_doctrine_orm.block.audit:
+        #    contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.rss:
+
+        # Some specific block from the SonataMediaBundle
+        sonata.media.block.media:
+        sonata.media.block.gallery:
+        #sonata.media.block.feature_media:
+
+sonata_admin:
+    templates:
+        layout:  SymfonierAdminBundle::standard_layout.html.twig
+        ajax:    SymfonierAdminBundle:ajax_layout.html.twig
+        list:    SymfonierAdminBundle:CRUD:list.html.twig
+        show:    SymfonierAdminBundle:CRUD:show.html.twig
+        edit:    SymfonierAdminBundle:CRUD:edit.html.twig
+        history: SymfonierAdminBundle:CRUD:history.html.twig
+        preview: SymfonierAdminBundle:CRUD:preview.html.twig
+        delete:  SymfonierAdminBundle:CRUD:delete.html.twig
+        batch:   SymfonierAdminBundle:CRUD:list__batch.html.twig
+        acl:     SymfonierAdminBundle:CRUD:acl.html.twig
+        action:  SymfonierAdminBundle:CRUD:action.html.twig
+        select:  SymfonierAdminBundle:CRUD:list__select.html.twig
+        # filter:  SymfonierAdminBundle:Form:filter_admin_fields.html.twig
+        dashboard:           SymfonierAdminBundle:Core:dashboard.html.twig
+        search:              SymfonierAdminBundle:Core:search.html.twig
+        batch_confirmation:  SymfonierAdminBundle:CRUD:batch_confirmation.html.twig
+        inner_list_row:      SymfonierAdminBundle:CRUD:list_inner_row.html.twig
+        base_list_field:     SymfonierAdminBundle:CRUD:base_list_field.html.twig
+        list_block:          SymfonierAdminBundle:Block:block_admin_list.html.twig
+        user_block:          SymfonierAdminBundle:Core:user_block.html.twig
+        # add_block:           SymfonierAdminBundle:Core:add_block.html.twig
+        pager_links:         SymfonierAdminBundle:Pager:links.html.twig
+        pager_results:       SymfonierAdminBundle:Pager:results.html.twig
+        history_revision_timestamp:  SymfonierAdminBundle:CRUD:history_revision_timestamp.html.twig
+        short_object_description:    SymfonierAdminBundle:Helper:short-object-description.html.twig
+        search_result_block: SymfonierAdminBundle:Block:block_search_result.html.twig

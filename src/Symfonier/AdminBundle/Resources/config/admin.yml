@@ -1,0 +1,8 @@
+services:
+
+    symfonier_admin.admin.user:
+        class: Symfonier\AdminBundle\Admin\UserAdmin
+        arguments: [~, Symfonier\UserBundle\Document\User, SymfonierAdminBundle:UserAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: doctrine_mongodb, group: admin, label: User}
+            #   - [ setTemplate, [edit, SymfonierAdminBundle:UserAdmin:edit.html.twig]]

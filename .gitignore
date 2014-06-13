@@ -1,0 +1,16 @@
+*.tmp
+/web/bundles/
+/web/css/
+/web/js/
+/app/cache/*
+/app/logs/*
+/build/
+/vendor/
+/bin/
+/composer.phar
+composer.lock
+/web/.htaccess
+/app/config/parameters.yml
+/web/uploads/*
+/web/media/*
+.DS_Store

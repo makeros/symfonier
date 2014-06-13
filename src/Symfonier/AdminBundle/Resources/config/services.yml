@@ -1,0 +1,13 @@
+parameters:
+#    Symfonier_admin.example.class: Symfonier\AdminBundle\Example
+
+imports:
+    - { resource: admin.yml }
+
+services:
+    document.listener:
+        class: Symfonier\AdminBundle\EventListener\DocumentListener
+        tags:
+            - { name: doctrine_mongodb.odm.event_listener, event: postPersist }
+            - { name: doctrine_mongodb.odm.event_listener, event: prePersist }
+            - { name: doctrine_mongodb.odm.event_listener, event: postUpdate }

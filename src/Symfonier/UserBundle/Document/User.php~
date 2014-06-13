@@ -1,0 +1,157 @@
+<?php
+
+namespace Symfonier\UserBundle\Document;
+
+use FOS\UserBundle\Document\User as BaseUser;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/**
+ * @MongoDB\Document
+ */
+class User extends BaseUser
+{
+    /**
+     * @MongoDB\Id(strategy="auto")
+     */
+    public $id;
+
+    /**
+     * @MongoDB\ObjectId
+     */
+    public $housingId;
+
+    /**
+     * @MongoDB\String
+     */
+    protected $firstName;
+
+    /**
+     * @MongoDB\String
+     */
+    protected $lastName;
+
+    /**
+     * @MongoDB\Boolean
+     */
+    protected $isVerified = false;
+
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+
+    }
+
+    /**
+     * Set user roles as array 
+     */
+    public function setRoles(array $roles)
+    {
+        $this->roles = array();
+
+        foreach ($roles as $role) {
+            $this->addRole($role);
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * Get id
+     *
+     * @return id $id
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set isVerified
+     *
+     * @param boolean $isVerified
+     * @return self
+     */
+    public function setIsVerified($isVerified)
+    {
+        $this->isVerified = $isVerified;
+        return $this;
+    }
+
+    /**
+     * Get isVerified
+     *
+     * @return boolean $isVerified
+     */
+    public function getIsVerified()
+    {
+        return $this->isVerified;
+    }
+
+    /**
+     * Set housingId
+     *
+     * @param object_id $housingId
+     * @return self
+     */
+    public function setHousingId($housingId)
+    {
+        $this->housingId = $housingId;
+        return $this;
+    }
+
+    /**
+     * Get housingId
+     *
+     * @return object_id $housingId
+     */
+    public function getHousingId()
+    {
+        return $this->housingId;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     * @return self
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string $firstName
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     * @return self
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string $lastName
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+}
