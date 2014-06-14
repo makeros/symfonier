@@ -43,6 +43,9 @@ class TestController extends FOSRestController
 
     $result = array();
 
+    $dm = $this->get('doctrine_mongodb')->getManager();
+
+    // $testResult = 
 
 
     return $result;

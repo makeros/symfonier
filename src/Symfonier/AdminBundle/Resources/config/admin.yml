@@ -6,3 +6,9 @@ services:
         tags:
             - {name: sonata.admin, manager_type: doctrine_mongodb, group: admin, label: User}
             #   - [ setTemplate, [edit, SymfonierAdminBundle:UserAdmin:edit.html.twig]]
+
+    symfonier_admin.admin.test:
+        class: Symfonier\AdminBundle\Admin\TestAdmin
+        arguments: [~, Symfonier\ApiBundle\Document\Test, SymfonierAdminBundle:TestAdmin]
+        tags:
+            - {name: sonata.admin, manager_type: doctrine_mongodb, group: admin, label: Test}

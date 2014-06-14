@@ -1,0 +1,23 @@
+<?php
+
+namespace Symfonier\ApiBundle\Document;
+
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+
+/**
+ * @MongoDB\Document
+ */
+class Test
+{
+    /**
+     * @MongoDB\Id(strategy="auto")
+     */
+    protected $id;
+
+    /**
+     * @MongoDB\String
+     */
+    protected $msg;
+
+
+}

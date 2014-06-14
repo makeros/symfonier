@@ -2,22 +2,23 @@
 
 namespace Symfonier\ApiBundle\Document;
 
-
+use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * Symfonier\ApiBundle\Document\Test
+ * @MongoDB\Document
  */
 class Test
 {
     /**
-     * @var $id
+     * @MongoDB\Id(strategy="auto")
      */
     protected $id;
 
     /**
-     * @var string $msg
+     * @MongoDB\String
      */
     protected $msg;
+
 
 
     /**
